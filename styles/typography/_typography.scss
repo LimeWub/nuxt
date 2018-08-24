@@ -17,6 +17,7 @@ html {
 }
 
 h1,h2,h3,h4,h5,h6 {
+	margin: 0 0 0.7em 0;
     font-family: $font-stack-heading;
 	word-wrap: break-word;
 	font-weight: bold;
@@ -52,18 +53,15 @@ h6, .h6 {
 	font-weight: 500;
 	margin-bottom: 1.25rem;
 	font-size: 1rem;
-	line-height: 1.3;
 }
 
 p, .p {
 	margin: 0 0 1.5rem 0;
 	font-size: 1rem;
-	line-height: 1;
 }
 
 li, .li, label {
 	margin: 0 0 0.8rem 0;
-	line-height: 1rem;
 }
 
 ul, ol {
@@ -178,5 +176,5 @@ blockquote, .blockquote {
 /* SELECTION */
 ::selection {
 	color: $white;
-	background: $grey;
+	background: $pink;
 }

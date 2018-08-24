@@ -21,7 +21,6 @@ export default {
 <style lang="scss" scoped>
   .card {
     width: 100%;
-    background: grey;
     position: relative;
 
     &::after {
@@ -43,6 +42,5 @@ export default {
   }
 
   .card__content {
-      color: white;
   }
 </style>

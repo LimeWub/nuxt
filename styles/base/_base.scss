@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: red;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.rte {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

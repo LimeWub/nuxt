@@ -1,0 +1,82 @@
+
+//==========================================================================================
+// Themes
+// Main colour themes used throughout the blocks of the website
+//==========================================================================================
+$colour-themes: (
+/*
+    "example": (
+        $white, // Background Color
+        $grey, // Heading Color
+        $grey // Paragraph Color
+    )
+*/
+    "default": (
+        $white,
+        $black,
+        $grey
+    )
+    
+);
+
+// LOOP EACH -
+@each $theme-name, $theme-colors in $colour-themes {
+
+    // Set some local variables for clarity -
+    // Background color
+    $themeBG: #{nth($theme-colors, 1)};
+
+    // Text Variables
+    $themeTextHeading: #{nth($theme-colors, 2)};
+    $themeTextParagraph: #{nth($theme-colors, 3)};
+
+    // Generate theme rules
+    .theme--#{$theme-name} {
+
+        // Set base theme properties
+        background: $themeBG;
+        color: $themeTextParagraph;
+        fill:  $themeTextParagraph; //svgs
+
+        //Headings
+        h1, h2, h3, h4, h5, h6, 
+        .h1, .h2, .h3, .h4, .h5, .h6 {
+            color: $themeTextHeading;
+        }
+
+        blockquote {
+            color: $themeTextHeading;
+        }
+
+        // Importants
+        .background--theme {
+            background: $themeBG;
+        }
+
+        .typo--theme {
+            color: $themeTextParagraph;
+
+            &:hover, &:focus {
+                color: $themeTextParagraph;
+            }
+        }
+
+        .typo-highlight--theme {
+            color: $themeTextHeading;
+
+            &:hover, &:focus {
+                color: $themeTextHeading;
+            }
+        }
+
+        .svg--theme {
+            fill: $themeTextParagraph;
+        }
+
+        .svg-highlight--theme {
+            fill: $themeTextHeading;
+        }
+
+    }
+    
+}
