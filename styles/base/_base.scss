@@ -1,11 +1,16 @@
 body {
     margin: 0;
     padding: 0;
-    background: red;
 }
 
 * {
     box-sizing: border-box;
+    color: var( --text-color , #{$black});
+    fill: var( --fill-color , #{$black});
+}
+
+body, section, article, div, nav, footer, header {
+    background: var( --bg-color , #{$white});
 }
 
 .rte {

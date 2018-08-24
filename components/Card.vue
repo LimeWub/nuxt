@@ -42,5 +42,6 @@ export default {
   }
 
   .card__content {
+      color: white;
   }
 </style>

@@ -1,0 +1,117 @@
+/* --------------------------------------------------------------------------------------------*/
+/* 
+
+SPACING
+handle spacing between items and remove spacing on mobile
+
+/* --------------------------------------------------------------------------------------------*/
+
+/* VARIABLES */
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+}
+
+.text-container {
+    width: 100%;
+    max-width: 100vw;
+    @include breakpoint(sm) {
+		max-width: 75vw;
+    }
+    
+    @include breakpoint(lg) {
+		max-width: 50vw;
+    }
+}
+
+/* Spacing */
+.spacing {
+    padding: $vertical-spacing $horizontal-spacing;
+}
+
+.item-spacing {
+    padding: $vertical-spacing*0.5 $horizontal-spacing*0.5;
+}
+
+
+/* Section */
+.section {
+
+}
+
+.section--vertical-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.section--cover-image {
+    min-height: 450px;
+}
+
+.section__container{
+    width: 100%;
+}
+
+/* Height */
+.height {
+
+}
+
+.height--fifty {
+    min-height: 50vh;
+}
+
+.height--seventy {
+    min-height: 70vh;
+}
+
+.height--hundred {
+    min-height: 100vh;
+}
+
+/* Pattern */
+.texture {
+    position: relative;
+    z-index: 1;
+    
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+
+.texture--lines {
+    &:before {
+  //      background-image: url('./../../../images/svg/lines.svg');
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-position: center center;
+    }
+}
+
+.texture--polka {
+    position: relative;
+
+    &:before{
+        content: '';
+        background-image:
+        radial-gradient(var(--text-color, #{$black}) 20%, transparent 0), 
+        radial-gradient(var(--text-color, #{$black}) 20%, transparent 0);
+        background-size: 100px*.75 100px*.75;
+        background-position: 0 0, 50px*.75 50px*.75; 
+        opacity: .2;
+    }
+    
+}

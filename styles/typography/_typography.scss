@@ -175,6 +175,6 @@ blockquote, .blockquote {
 /* -----------------------------*/
 /* SELECTION */
 ::selection {
-	color: $white;
-	background: $pink;
+	background: var( --text-color , #{$black});
+    color: var( --bg-color , #{$white});
 }

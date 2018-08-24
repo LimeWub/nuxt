@@ -22,6 +22,13 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    postcss: [
+      require('postcss-cssnext')({
+        features: {
+          customProperties: false
+        }
+      })
+    ],
     /*
     ** Run ESLint on save
     */

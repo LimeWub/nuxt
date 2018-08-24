@@ -7,14 +7,20 @@ $colour-themes: (
 /*
     "example": (
         $white, // Background Color
-        $grey, // Heading Color
         $grey // Paragraph Color
     )
 */
-    "default": (
-        $white,
-        $black,
-        $grey
+    "pink": (
+        $pink,
+        $white
+    ),
+    "purple": (
+        $purple,
+        $white
+    ),
+    "yellow": (
+        $yellow,
+        $black
     )
     
 );
@@ -25,58 +31,65 @@ $colour-themes: (
     // Set some local variables for clarity -
     // Background color
     $themeBG: #{nth($theme-colors, 1)};
-
-    // Text Variables
-    $themeTextHeading: #{nth($theme-colors, 2)};
-    $themeTextParagraph: #{nth($theme-colors, 3)};
+    $themeText: #{nth($theme-colors, 2)};
 
     // Generate theme rules
     .theme--#{$theme-name} {
 
         // Set base theme properties
-        background: $themeBG;
-        color: $themeTextParagraph;
-        fill:  $themeTextParagraph; //svgs
+        --bg-color: #{$themeBG};
+        --text-color: #{$themeText};
+        --fill-color: #{$themeText};
 
-        //Headings
-        h1, h2, h3, h4, h5, h6, 
-        .h1, .h2, .h3, .h4, .h5, .h6 {
-            color: $themeTextHeading;
-        }
-
-        blockquote {
-            color: $themeTextHeading;
-        }
 
         // Importants
         .background--theme {
-            background: $themeBG;
+            --bg-color: #{$themeBG};
         }
 
         .typo--theme {
-            color: $themeTextParagraph;
-
-            &:hover, &:focus {
-                color: $themeTextParagraph;
-            }
-        }
-
-        .typo-highlight--theme {
-            color: $themeTextHeading;
-
-            &:hover, &:focus {
-                color: $themeTextHeading;
-            }
+            --text-color: #{$themeBG};
         }
 
         .svg--theme {
-            fill: $themeTextParagraph;
+            --fill-color: #{$themeText};
         }
 
-        .svg-highlight--theme {
-            fill: $themeTextHeading;
+        button {
+            --bg-color: #{$themeBG};
+            --text-color: #{$themeText};
         }
 
     }
+
+    // Generate theme rules (Reverse)
+    .theme--#{$theme-name}-reverse {
+
+        // Set base theme properties
+        --bg-color: #{$themeText};
+        --text-color: #{$themeBG};
+        --fill-color: #{$themeBG};
+
+
+        // Importants
+        .background--theme {
+            --bg-color: #{$themeText};
+        }
+
+        .typo--theme {
+            --text-color: #{$themeBG};
+        }
+
+        .svg--theme {
+            --fill-color: #{$themeBG};
+        }
+
+        button {
+            --bg-color: #{$themeText};
+            --text-color: #{$themeBG};
+        }
+    }
+
+    
     
 }
