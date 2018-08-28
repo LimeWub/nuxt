@@ -22,12 +22,10 @@
           p {{ lorem }}
           p {{ lorem }}
           p {{ lorem }}
-          button hello
-            canvas.button__canvas.jsParticle(v-on:click="log")
-            
-          button(disabled) hello
-        card
-
+          BloopButton(button-text="Hello")
+          BloopButton(disabled button-text="Disabled")
+        Card
+        
       div.card
         h1 Who dis
 </template>
@@ -35,6 +33,7 @@
 
 <script>
 import Card from "~/components/Card";
+import BloopButton from "~/components/BloopButton";
 
 export default {
   data: () => {
@@ -43,20 +42,10 @@ export default {
     };
   },
   components: {
-    Card
+    Card,
+    BloopButton
   },
   methods: {
-    log: (event) => {
-      let canvas = event.target;
-      canvas.width  = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      canvas.ctx = canvas.getContext('2d');
-      var rect = canvas.getBoundingClientRect();
-      var x = Math.floor(event.clientX - rect.left);
-      var y = Math.floor(event.clientY - rect.top);
-      canvas.ctx.fillRect(x, y, 5, 5);
-      console.log('wat', x ,y);
-    }
   },
   mounted : function() {
   //  let hmm = document.getElementsByClassName('jsParticle');
@@ -68,13 +57,6 @@ export default {
 </script>
 
 <style lang="scss">
-.button__canvas{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
 .container {
   //text-align: center;
 }
