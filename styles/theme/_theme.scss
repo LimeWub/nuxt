@@ -55,11 +55,6 @@ $colour-themes: (
             --fill-color: #{$themeText};
         }
 
-        button {
-            --bg-color: #{$themeBG};
-            --text-color: #{$themeText};
-        }
-
     }
 
     // Generate theme rules (Reverse)
@@ -82,11 +77,6 @@ $colour-themes: (
 
         .svg--theme {
             --fill-color: #{$themeBG};
-        }
-
-        button {
-            --bg-color: #{$themeText};
-            --text-color: #{$themeBG};
         }
     }
 

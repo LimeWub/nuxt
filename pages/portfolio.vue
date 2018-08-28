@@ -23,6 +23,7 @@
           p {{ lorem }}
           p {{ lorem }}
           BloopButton(button-text="Hello")
+          BloopButton(button-text="Hello" href="http://www.google.com")
           BloopButton(disabled button-text="Disabled")
         Card
         

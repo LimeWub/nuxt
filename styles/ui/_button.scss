@@ -11,6 +11,8 @@
 //  Base Styles
 //==========================================================================================
 .btn, button {
+    background: var( --bg-color , #{$white});
+    border-color: var(--text-color, transparent);
     font-family: $font-stack-heading;
     position: relative;
     display: inline-block;
@@ -32,13 +34,12 @@
     border-width: 2px;
     border-radius: .25em;
     text-transform: uppercase;
-    border-color: var(--text-color, transparent);
     transition: all .15s ease-in-out .1s;
 
     &:hover, &:focus {
         outline: none;
-        color: var(--bg-color);
-        background: var(--text-color);
+        color: var( --bg-color , #{$white});
+        background: var(--text-color, #{$black});
     }
 }
 
