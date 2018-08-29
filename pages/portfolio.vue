@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.container.theme.theme--pink.spacing
+  section.container.theme.theme--pink
       div.rte
         div.theme.theme--pink-reverse.spacing
             h1 Heading 1
@@ -25,7 +25,7 @@
           BloopButton(button-text="Hello")
           BloopButton(button-text="Hello" href="http://www.google.com")
           BloopButton(disabled button-text="Disabled")
-        Card
+        Showcase
         
       div.card
         h1 Who dis
@@ -33,7 +33,7 @@
 
 
 <script>
-import Card from "~/components/Card";
+import Showcase from "~/components/Showcase";
 import BloopButton from "~/components/BloopButton";
 
 export default {
@@ -43,7 +43,7 @@ export default {
     };
   },
   components: {
-    Card,
+    Showcase,
     BloopButton
   },
   methods: {

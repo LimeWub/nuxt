@@ -9,7 +9,7 @@ body {
     fill: var( --fill-color , #{$black});
 }
 
-body, section, article, div, nav, footer, header {
+body, section, nav, footer, header, .theme {
     background: var( --bg-color , #{$white});
 }
 
